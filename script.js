@@ -1046,3 +1046,103 @@ s.remove();
 setInterval(shooting,9000);
 
 console.log("✨ Magic Effects Loaded ✨");
+/* =========================================
+PHASE 6A
+ANNIVERSARY
+========================================= */
+
+// Secret Gift
+
+const gift=document.getElementById("giftButton");
+
+const popup=document.getElementById("giftPopup");
+
+const closeGift=document.getElementById("closeGift");
+
+if(gift && popup && closeGift){
+
+gift.onclick=()=>{
+
+popup.style.display="flex";
+
+};
+
+closeGift.onclick=()=>{
+
+popup.style.display="none";
+
+};
+
+}
+
+// Celebration
+
+window.addEventListener("load",()=>{
+
+const text=
+
+document.getElementById("celebrationText");
+
+if(text){
+
+setTimeout(()=>{
+
+text.style.opacity="1";
+
+},1500);
+
+setTimeout(()=>{
+
+text.style.opacity="0";
+
+},6500);
+
+}
+
+});
+
+// Heart Rain
+
+function heartRain(){
+
+const heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.style.position="fixed";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.top="-40px";
+
+heart.style.fontSize=
+
+20+Math.random()*20+"px";
+
+heart.style.pointerEvents="none";
+
+heart.style.transition="8s linear";
+
+heart.style.zIndex="999";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.style.transform=
+
+"translateY(120vh)";
+
+heart.style.opacity="0";
+
+},100);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},8000);
+
+}
+
+setInterval(heartRain,700);
