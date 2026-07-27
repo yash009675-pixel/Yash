@@ -1146,3 +1146,61 @@ heart.remove();
 }
 
 setInterval(heartRain,700);
+/* =========================================
+PHASE 6B
+CONFETTI
+========================================= */
+
+function launchConfetti(){
+
+const colors=[
+"#ff4fd8",
+"#8b5cf6",
+"#ffd700",
+"#00e5ff",
+"#ffffff",
+"#ff6b6b"
+];
+
+for(let i=0;i<180;i++){
+
+const confetti=
+document.createElement("div");
+
+confetti.className="confetti";
+
+confetti.style.left=
+Math.random()*100+"vw";
+
+confetti.style.background=
+colors[Math.floor(Math.random()*colors.length)];
+
+confetti.style.animationDuration=
+(4+Math.random()*3)+"s";
+
+confetti.style.animationDelay=
+(Math.random()*0.5)+"s";
+
+document.body.appendChild(confetti);
+
+setTimeout(()=>{
+
+confetti.remove();
+
+},8000);
+
+}
+
+}
+
+// Launch after page load
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+launchConfetti();
+
+},2500);
+
+});
