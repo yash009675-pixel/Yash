@@ -1380,3 +1380,446 @@ transform:scale(1.12);
 
 }
 
+/* =========================================
+   STORY PAGE
+========================================= */
+
+.story-page{
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+}
+
+.story-container{
+
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:80px 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.story-title{
+
+    font-family:'Playfair Display',serif;
+
+    text-align:center;
+
+    font-size:62px;
+
+    margin-bottom:15px;
+
+    text-shadow:
+    0 0 20px rgba(255,255,255,.3),
+    0 0 35px rgba(255,0,180,.4);
+
+}
+
+.story-subtitle{
+
+    text-align:center;
+
+    color:#f3d7ff;
+
+    margin-bottom:80px;
+
+    font-size:20px;
+
+}
+
+/* =========================================
+TIMELINE
+========================================= */
+
+#ourStory{
+
+    position:relative;
+
+    padding:20px 0;
+
+}
+
+.memory-line{
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    bottom:0;
+
+    width:4px;
+
+    background:
+
+    linear-gradient(
+
+    #ff4fd8,
+
+    #9b5cff
+
+    );
+
+    transform:translateX(-50%);
+
+    border-radius:20px;
+
+}
+
+.memory-card{
+
+    width:50%;
+
+    padding:20px 40px;
+
+    position:relative;
+
+}
+
+.memory-card.left{
+
+    left:0;
+
+}
+
+.memory-card.right{
+
+    left:50%;
+
+}
+
+.memory-date{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #ff4fd8,
+
+    #9b5cff
+
+    );
+
+    color:#fff;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+
+}
+
+.memory-content{
+
+    background:
+
+    rgba(255,255,255,.1);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    padding:25px;
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.25);
+
+    transition:.4s;
+
+}
+
+.memory-content:hover{
+
+    transform:
+
+    translateY(-8px);
+
+}
+
+.memory-content img{
+
+    width:100%;
+
+    border-radius:18px;
+
+    margin-bottom:18px;
+
+}
+
+.memory-content h3{
+
+    margin-bottom:15px;
+
+}
+
+.memory-content p{
+
+    line-height:1.8;
+
+}
+
+.readMore{
+
+    margin-top:20px;
+
+    border:none;
+
+    padding:12px 26px;
+
+    border-radius:30px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #ff4fd8,
+
+    #9b5cff
+
+    );
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.readMore:hover{
+
+    transform:scale(1.05);
+
+}
+
+.hiddenMemory{
+
+    display:none;
+
+    margin-top:18px;
+
+    line-height:1.8;
+
+    color:#ffe8ff;
+
+}
+
+/* =========================================
+GALLERY
+========================================= */
+
+#gallery{
+
+    margin-top:140px;
+
+    text-align:center;
+
+}
+
+.gallery-title{
+
+    font-size:46px;
+
+    margin-bottom:15px;
+
+    font-family:'Playfair Display',serif;
+
+}
+
+.gallery-sub{
+
+    margin-bottom:40px;
+
+}
+
+.gallery-slider{
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+}
+
+.slides{
+
+    display:flex;
+
+    gap:25px;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    padding-bottom:10px;
+
+}
+
+.slides::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.slide{
+
+    min-width:320px;
+
+    scroll-snap-align:center;
+
+}
+
+.slide img{
+
+    width:100%;
+
+    border-radius:20px;
+
+}
+
+.slide p{
+
+    margin-top:15px;
+
+    color:#ffdfff;
+
+}
+
+.gallery-caption{
+
+    margin-top:30px;
+
+    font-size:22px;
+
+}
+
+/* =========================================
+LOVE LETTER
+========================================= */
+
+.letter-card{
+
+    max-width:800px;
+
+    margin:40px auto;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.1);
+
+    backdrop-filter:blur(20px);
+
+    line-height:2;
+
+}
+
+/* =========================================
+QUOTE
+========================================= */
+
+.quote-section{
+
+    margin:120px 0;
+
+    text-align:center;
+
+}
+
+.quote-section h2{
+
+    font-size:34px;
+
+    font-family:'Playfair Display',serif;
+
+}
+
+/* =========================================
+ENDING
+========================================= */
+
+.ending-section{
+
+    text-align:center;
+
+    margin:100px 0;
+
+}
+
+.ending-section h2{
+
+    margin-bottom:25px;
+
+}
+
+/* =========================================
+BUTTONS
+========================================= */
+
+.story-buttons{
+
+    text-align:center;
+
+    margin-top:70px;
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+.memory-line{
+
+display:none;
+
+}
+
+.memory-card{
+
+width:100%;
+
+left:0 !important;
+
+padding:15px;
+
+}
+
+.story-title{
+
+font-size:42px;
+
+}
+
+.gallery-title{
+
+font-size:34px;
+
+}
+
+.slide{
+
+min-width:260px;
+
+}
+
+}
