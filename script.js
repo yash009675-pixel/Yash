@@ -442,6 +442,24 @@ themeBtn.innerHTML="☀️";
 }else{
 
 themeBtn.innerHTML="🌙";
+    // ==========================
+// Cinematic Intro
+// ==========================
+
+window.addEventListener("load", () => {
+
+    const intro = document.getElementById("intro");
+
+    if (!intro) return;
+
+    setTimeout(() => {
+
+        intro.style.display = "none";
+
+    }, 6000);
+
+});
+    
 
 }
 
