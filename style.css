@@ -1085,3 +1085,222 @@ letter-spacing:5px;
 }
 
 }
+/* =========================================
+   PHASE 3 - LOVE LETTER
+========================================= */
+
+#loveLetter{
+
+padding:120px 20px;
+
+text-align:center;
+
+position:relative;
+
+z-index:5;
+
+}
+
+.section-title{
+
+font-size:42px;
+
+font-family:'Playfair Display',serif;
+
+margin-bottom:50px;
+
+color:#fff;
+
+text-shadow:0 0 20px rgba(255,255,255,.4);
+
+}
+
+.envelope{
+
+position:relative;
+
+width:340px;
+
+height:220px;
+
+margin:0 auto;
+
+cursor:pointer;
+
+transition:.8s;
+
+perspective:1000px;
+
+}
+
+.envelope::before{
+
+content:"";
+
+position:absolute;
+
+bottom:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(135deg,#ff6bd6,#9b5cff);
+
+border-radius:12px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+z-index:1;
+
+}
+
+.envelope-top{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:120px;
+
+background:linear-gradient(135deg,#ff85df,#b06cff);
+
+clip-path:polygon(0 0,100% 0,50% 100%);
+
+transform-origin:top;
+
+transition:.8s;
+
+z-index:3;
+
+}
+
+.letter{
+
+position:absolute;
+
+left:50%;
+
+top:25px;
+
+transform:translateX(-50%) translateY(80px);
+
+width:88%;
+
+height:260px;
+
+background:white;
+
+border-radius:15px;
+
+padding:22px;
+
+overflow:auto;
+
+color:#333;
+
+text-align:left;
+
+transition:.8s;
+
+z-index:2;
+
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+}
+
+.letter h3{
+
+text-align:center;
+
+margin-bottom:18px;
+
+font-family:'Playfair Display',serif;
+
+color:#ff4fd8;
+
+}
+
+.letter p{
+
+font-size:15px;
+
+line-height:1.8;
+
+}
+
+.envelope.open .envelope-top{
+
+transform:rotateX(180deg);
+
+}
+
+.envelope.open .letter{
+
+transform:translateX(-50%) translateY(-120px);
+
+}
+
+#openLetter{
+
+margin-top:190px;
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:40px;
+
+font-size:17px;
+
+font-weight:600;
+
+cursor:pointer;
+
+background:linear-gradient(135deg,#ff4fd8,#9b5cff);
+
+color:#fff;
+
+box-shadow:0 10px 25px rgba(255,0,200,.35);
+
+transition:.3s;
+
+}
+
+#openLetter:hover{
+
+transform:translateY(-4px) scale(1.05);
+
+box-shadow:0 18px 35px rgba(255,0,200,.5);
+
+}
+
+@media(max-width:768px){
+
+.envelope{
+
+width:300px;
+
+height:200px;
+
+}
+
+.letter{
+
+height:240px;
+
+}
+
+.section-title{
+
+font-size:32px;
+
+}
+
+}
