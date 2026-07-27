@@ -944,3 +944,105 @@ console.log(
 "❤️ Story Page Loaded Successfully ❤️"
 
 );
+/* =========================================
+PHASE 5A
+MAGIC EFFECTS
+========================================= */
+
+// Cursor Glow
+
+const glow=document.createElement("div");
+
+glow.className="cursor-glow";
+
+document.body.appendChild(glow);
+
+document.addEventListener("mousemove",e=>{
+
+glow.style.left=e.clientX-12+"px";
+
+glow.style.top=e.clientY-12+"px";
+
+});
+
+// Fireflies
+
+function firefly(){
+
+const f=document.createElement("div");
+
+f.className="firefly";
+
+f.style.left=Math.random()*100+"vw";
+
+f.style.top="100vh";
+
+f.style.animationDuration=
+
+8+Math.random()*8+"s";
+
+document.body.appendChild(f);
+
+setTimeout(()=>{
+
+f.remove();
+
+},16000);
+
+}
+
+setInterval(firefly,1200);
+
+// Roses
+
+function rose(){
+
+const r=document.createElement("div");
+
+r.className="rose";
+
+r.innerHTML="🌹";
+
+r.style.left=Math.random()*100+"vw";
+
+r.style.animationDuration=
+
+6+Math.random()*4+"s";
+
+document.body.appendChild(r);
+
+setTimeout(()=>{
+
+r.remove();
+
+},10000);
+
+}
+
+setInterval(rose,2500);
+
+// Shooting Star
+
+function shooting(){
+
+const s=document.createElement("div");
+
+s.className="shooting-star";
+
+s.style.top=Math.random()*250+"px";
+
+s.style.left="100vw";
+
+document.body.appendChild(s);
+
+setTimeout(()=>{
+
+s.remove();
+
+},1800);
+
+}
+
+setInterval(shooting,9000);
+
+console.log("✨ Magic Effects Loaded ✨");
