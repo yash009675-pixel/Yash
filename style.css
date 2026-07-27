@@ -882,3 +882,206 @@ font-size:16px;
 }
 
 }
+/* =========================================
+   PHASE 2 - CINEMATIC INTRO
+========================================= */
+
+#cinematicIntro{
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    z-index:99999;
+}
+
+.intro-overlay{
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at center,
+    rgba(140,80,255,.15),
+    transparent 60%);
+    animation:pulseGlow 4s infinite;
+}
+
+.intro-box{
+    position:relative;
+    text-align:center;
+    z-index:2;
+    padding:20px;
+}
+
+.intro-title{
+    font-family:'Playfair Display',serif;
+    font-size:68px;
+    color:#fff;
+    letter-spacing:2px;
+    margin-bottom:15px;
+
+    text-shadow:
+    0 0 10px #ff4fd8,
+    0 0 25px #9b5cff,
+    0 0 45px #9b5cff;
+
+    animation:titleZoom 3s ease;
+}
+
+.intro-present{
+
+    color:#bbb;
+
+    letter-spacing:8px;
+
+    text-transform:uppercase;
+
+    font-size:16px;
+
+    margin-bottom:25px;
+
+    animation:fadeUp 2s ease;
+
+}
+
+#typingText{
+
+    color:#fff;
+
+    font-size:30px;
+
+    min-height:45px;
+
+    font-weight:500;
+
+    letter-spacing:1px;
+
+}
+
+.intro-line{
+
+    width:0;
+
+    height:2px;
+
+    margin:25px auto 0;
+
+    background:linear-gradient(
+    90deg,
+    transparent,
+    #ff4fd8,
+    #9b5cff,
+    transparent);
+
+    animation:lineGrow 3s forwards;
+
+}
+
+@keyframes titleZoom{
+
+0%{
+
+opacity:0;
+
+transform:scale(.7);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes lineGrow{
+
+0%{
+
+width:0;
+
+}
+
+100%{
+
+width:260px;
+
+}
+
+}
+
+@keyframes pulseGlow{
+
+0%{
+
+opacity:.4;
+
+transform:scale(1);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.15);
+
+}
+
+100%{
+
+opacity:.4;
+
+transform:scale(1);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.intro-title{
+
+font-size:44px;
+
+}
+
+#typingText{
+
+font-size:22px;
+
+}
+
+.intro-present{
+
+font-size:13px;
+
+letter-spacing:5px;
+
+}
+
+}
