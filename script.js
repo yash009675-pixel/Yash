@@ -665,3 +665,282 @@ console.log(
 // ==========================================
 
 console.log("✅ Script Version 2.0 Loaded");
+/* =========================================
+   STORY PAGE JAVASCRIPT
+========================================= */
+
+// ===============================
+// Read Memory Button
+// ===============================
+
+const memoryButtons =
+document.querySelectorAll(".readMore");
+
+memoryButtons.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+const memory =
+button.nextElementSibling;
+
+if(memory.style.display==="block"){
+
+memory.style.display="none";
+
+button.innerHTML="Read Memory ❤️";
+
+}else{
+
+memory.style.display="block";
+
+button.innerHTML="Hide Memory ❤️";
+
+}
+
+});
+
+});
+
+
+
+// ===============================
+// Scroll Reveal Animation
+// ===============================
+
+const revealItems =
+document.querySelectorAll(
+
+".memory-card,.slide,.letter-card,.quote-section,.ending-section"
+
+);
+
+const revealObserver =
+new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0)";
+
+}
+
+});
+
+},
+
+{
+
+threshold:.15
+
+});
+
+revealItems.forEach(item=>{
+
+item.style.opacity="0";
+
+item.style.transform="translateY(60px)";
+
+item.style.transition=".8s ease";
+
+revealObserver.observe(item);
+
+});
+
+
+
+// ===============================
+// Auto Gallery Slider
+// ===============================
+
+const slider =
+document.querySelector(".slides");
+
+if(slider){
+
+let index=0;
+
+setInterval(()=>{
+
+const cards=
+
+slider.querySelectorAll(".slide");
+
+if(cards.length===0)return;
+
+index++;
+
+if(index>=cards.length){
+
+index=0;
+
+}
+
+slider.scrollTo({
+
+left:index*345,
+
+behavior:"smooth"
+
+});
+
+},3500);
+
+}
+
+
+
+// ===============================
+// Ending Glow
+// ===============================
+
+const ending=
+
+document.querySelector(".ending-section");
+
+if(ending){
+
+const endObserver=
+
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+ending.animate([
+
+{
+
+transform:"scale(.9)",
+
+opacity:.4
+
+},
+
+{
+
+transform:"scale(1)",
+
+opacity:1
+
+}
+
+],
+
+{
+
+duration:1000
+
+});
+
+}
+
+});
+
+});
+
+endObserver.observe(ending);
+
+}
+
+
+
+// ===============================
+// Scroll Progress Bar
+// ===============================
+
+const progress=
+document.getElementById("progressBar");
+
+window.addEventListener("scroll",()=>{
+
+if(!progress)return;
+
+const total=
+
+document.documentElement.scrollHeight-
+
+window.innerHeight;
+
+const current=
+
+(window.scrollY/total)*100;
+
+progress.style.width=current+"%";
+
+});
+
+
+
+// ===============================
+// Back To Top
+// ===============================
+
+const topBtn=
+
+document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+if(!topBtn)return;
+
+if(window.scrollY>500){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+});
+
+if(topBtn){
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+}
+
+
+
+// ===============================
+// Gallery Image Zoom
+// ===============================
+
+document.querySelectorAll(".slide img")
+
+.forEach(img=>{
+
+img.addEventListener("click",()=>{
+
+img.classList.toggle("zoom");
+
+});
+
+});
+
+
+
+// ===============================
+// Console
+// ===============================
+
+console.log(
+
+"❤️ Story Page Loaded Successfully ❤️"
+
+);
