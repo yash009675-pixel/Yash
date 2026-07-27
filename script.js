@@ -464,3 +464,39 @@ window.addEventListener("load", () => {
 }
 
 };
+/* =========================================
+   PHASE 3 - LOVE LETTER
+========================================= */
+
+const envelope = document.getElementById("envelope");
+const openLetterBtn = document.getElementById("openLetter");
+
+if (envelope && openLetterBtn) {
+
+    let isOpen = false;
+
+    openLetterBtn.addEventListener("click", () => {
+
+        isOpen = !isOpen;
+
+        envelope.classList.toggle("open", isOpen);
+
+        if (isOpen) {
+
+            openLetterBtn.innerHTML = "💌 Close Letter";
+
+            // Smooth scroll to letter
+            envelope.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        } else {
+
+            openLetterBtn.innerHTML = "Open My Letter ❤️";
+
+        }
+
+    });
+
+}
