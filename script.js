@@ -1204,3 +1204,47 @@ launchConfetti();
 },2500);
 
 });
+/* =========================================
+PHASE 6C
+PROPOSAL
+========================================= */
+
+const proposal=document.getElementById("proposalPopup");
+
+const yes=document.getElementById("yesBtn");
+
+const no=document.getElementById("noBtn");
+
+setTimeout(()=>{
+
+if(proposal){
+
+proposal.style.display="flex";
+
+}
+
+},12000);
+
+if(yes){
+
+yes.onclick=()=>{
+
+yes.innerHTML="❤️ Forever ❤️";
+
+};
+
+}
+
+if(no){
+
+no.addEventListener("mouseover",()=>{
+
+no.style.position="absolute";
+
+no.style.left=Math.random()*70+"%";
+
+no.style.top=Math.random()*70+"%";
+
+});
+
+}
