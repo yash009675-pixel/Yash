@@ -1,3 +1,4 @@
+alert("START JS ❤️");
 /* ======================================================
    Yash ❤️ Arpita
    Script.js Version 2.0 FINAL
