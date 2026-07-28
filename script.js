@@ -1892,3 +1892,4 @@ document.addEventListener(
 
 console.log("✅ Script Part 4 Loaded Successfully ❤️");
 
+alert("Script Loaded Successfully ❤️");
