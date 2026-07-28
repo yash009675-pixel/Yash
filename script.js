@@ -1815,5 +1815,80 @@ function createHeartRain(){
         heart.style.transform =
         "translateY(120vh)";
 
+    setTimeout(()=>{
 
+        heart.remove();
+
+    },8000);
+
+}
+
+
+// ==========================================
+// MOUSE HEART TRAIL
+// ==========================================
+
+function createMouseHeart(x,y){
+
+    const heart = document.createElement("div");
+
+    heart.className = "mouse-heart";
+
+    const emojis = [
+        "❤️",
+        "💖",
+        "💕",
+        "💜"
+    ];
+
+    heart.innerHTML =
+    emojis[Math.floor(Math.random()*emojis.length)];
+
+    heart.style.left = x + "px";
+
+    heart.style.top = y + "px";
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },900);
+
+}
+
+
+// Desktop
+
+document.addEventListener(
+"mousemove",
+(e)=>{
+
+    createMouseHeart(
+        e.clientX,
+        e.clientY
+    );
+
+});
+
+
+// Mobile
+
+document.addEventListener(
+"touchmove",
+(e)=>{
+
+    const touch = e.touches[0];
+
+    createMouseHeart(
+        touch.clientX,
+        touch.clientY
+    );
+
+});
+
+
+console.log("✅ Script Part 4 Loaded Successfully ❤️");
 
