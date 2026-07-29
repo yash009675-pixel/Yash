@@ -24,6 +24,7 @@ html{
 }
 
 body{
+   
 
     font-family:'Poppins',sans-serif;
 
@@ -2786,5 +2787,74 @@ font-size:34px;
 font-size:16px;
 
 }
+
+}
+/* =========================================
+VERSION 3.1
+GLASS SHINE
+========================================= */
+
+.card,
+.memory-content,
+.letter-card,
+.popup-card,
+.gift-card,
+.proposal-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.card::before,
+.memory-content::before,
+.letter-card::before,
+.popup-card::before,
+.gift-card::before,
+.proposal-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150%;
+
+    left:-150%;
+
+    width:250%;
+
+    height:250%;
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,.18),
+
+    transparent
+
+    );
+
+    transform:rotate(25deg);
+
+    transition:1.2s;
+
+}
+
+.card:hover::before,
+.memory-content:hover::before,
+.letter-card:hover::before,
+.popup-card:hover::before,
+.gift-card:hover::before,
+.proposal-card:hover::before{
+
+    top:100%;
+
+    left:100%;
 
 }
