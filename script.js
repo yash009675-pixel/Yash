@@ -2110,3 +2110,19 @@ document.body.style.overflow="auto";
 }
 
 });
+/* ======================================================
+AUTO PAUSE
+====================================================== */
+
+let pageVisible = true;
+
+document.addEventListener(
+
+"visibilitychange",
+
+()=>{
+
+pageVisible =
+!document.hidden;
+
+});
