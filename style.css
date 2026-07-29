@@ -1008,15 +1008,17 @@ transform:scale(1.12);
 
     position:relative;
 
-    width:340px;
+    width:360px;
 
-    height:220px;
+    height:300px;
 
     margin:0 auto;
 
     cursor:pointer;
 
     perspective:1000px;
+
+    overflow:hidden;
 
 }
 
