@@ -2155,45 +2155,32 @@ transform:translate(-50%,-60%);
 }
 
 #giftButton{
+    position: fixed;
+    left: 25px;
+    bottom: 25px;
 
-position:fixed;
+    padding: 12px 22px;
+    width: auto;
+    height: auto;
 
-left:25px;
+    border: none;
+    border-radius: 30px;
 
-bottom:25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
 
-width:65px;
+    background: linear-gradient(135deg,#ff4fd8,#8b5cf6);
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
 
-height:65px;
-
-border:none;
-
-border-radius:50%;
-
-font-size:28px;
-
-cursor:pointer;
-
-background:
-
-linear-gradient(135deg,#ff4fd8,#8b5cf6);
-
-box-shadow:
-
-0 12px 30px rgba(0,0,0,.35);
-
-z-index:999;
-
-transition:.35s;
-
+    cursor: pointer;
+    z-index: 999;
+    transition: .35s;
 }
 
 #giftButton:hover{
-
-transform:scale(1.1);
-
+    transform: scale(1.08);
 }
-
 #giftPopup{
 
 position:fixed;
