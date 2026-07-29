@@ -1,3 +1,26 @@
+/* ======================================================
+VERSION 3.0
+SMART PERFORMANCE MODE
+====================================================== */
+
+const isMobile =
+/Android|iPhone|iPad|iPod|Mobile/i.test(
+navigator.userAgent
+);
+
+const prefersReducedMotion =
+window.matchMedia(
+"(prefers-reduced-motion: reduce)"
+).matches;
+
+const performanceMode =
+isMobile || prefersReducedMotion;
+
+console.log(
+performanceMode
+? "📱 Performance Mode Enabled"
+: "💻 Full Effects Enabled"
+);
 alert("START JS ❤️");
 /* ======================================================
    Yash ❤️ Arpita
