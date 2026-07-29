@@ -1871,3 +1871,120 @@ if(photoViewer){
     });
 
 }
+/* ======================================================
+PHASE 7B.2
+PHOTO NAVIGATION
+====================================================== */
+
+const galleryImages =
+Array.from(document.querySelectorAll(".slide img"));
+
+const prevPhoto =
+document.getElementById("prevPhoto");
+
+const nextPhoto =
+document.getElementById("nextPhoto");
+
+let currentPhoto = 0;
+
+galleryImages.forEach((img,index)=>{
+
+    img.addEventListener("click",()=>{
+
+        currentPhoto = index;
+
+    });
+
+});
+
+function updateViewer(){
+
+    if(
+        viewerImage &&
+        galleryImages.length
+    ){
+
+        viewerImage.src =
+        galleryImages[currentPhoto].src;
+
+    }
+
+}
+
+if(nextPhoto){
+
+    nextPhoto.onclick=()=>{
+
+        currentPhoto++;
+
+        if(currentPhoto>=galleryImages.length){
+
+            currentPhoto=0;
+
+        }
+
+        updateViewer();
+
+    };
+
+}
+
+if(prevPhoto){
+
+    prevPhoto.onclick=()=>{
+
+        currentPhoto--;
+
+        if(currentPhoto<0){
+
+            currentPhoto=
+            galleryImages.length-1;
+
+        }
+
+        updateViewer();
+
+    };
+
+}
+
+/* Mobile Swipe */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+if(photoViewer){
+
+photoViewer.addEventListener("touchstart",(e)=>{
+
+touchStartX =
+e.changedTouches[0].clientX;
+
+});
+
+photoViewer.addEventListener("touchend",(e)=>{
+
+touchEndX =
+e.changedTouches[0].clientX;
+
+const diff =
+touchStartX-touchEndX;
+
+if(Math.abs(diff)>50){
+
+if(diff>0){
+
+nextPhoto.click();
+
+}else{
+
+prevPhoto.click();
+
+}
+
+}
+
+});
+
+}
