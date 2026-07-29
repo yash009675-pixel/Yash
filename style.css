@@ -389,7 +389,7 @@ body{
     0 12px 35px rgba(255,0,180,.35);
 
     transition:.35s;
-
+animation:buttonFloat 3s ease-in-out infinite;
 }
 
 .button:hover{
