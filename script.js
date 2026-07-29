@@ -1438,285 +1438,201 @@ console.log(
 "✅ Script Part 3 Loaded Successfully ❤️"
 );
 
+```javascript
 /* ======================================================
    Yash ❤️ Arpita
    Script.js Version 2.0 FINAL
-   PART 4
+   PART 4 — CORRECTED
 ====================================================== */
-
 
 
 /* ======================================================
    CURSOR GLOW
 ====================================================== */
 
-
 const cursorGlow =
 document.createElement("div");
-
 
 cursorGlow.className =
 "cursor-glow";
 
-
 document.body.appendChild(cursorGlow);
-
 
 
 document.addEventListener(
 "mousemove",
 (event)=>{
 
-
     cursorGlow.style.left =
     event.clientX - 12 + "px";
-
 
     cursorGlow.style.top =
     event.clientY - 12 + "px";
 
-
 });
-
-
-
-
-
 
 
 /* ======================================================
    FIREFLIES EFFECT
 ====================================================== */
 
-
 function createFirefly(){
-
 
     const firefly =
     document.createElement("div");
 
-
     firefly.className =
     "firefly";
-
 
     firefly.style.left =
     Math.random()*100 + "vw";
 
-
     firefly.style.top =
     "100vh";
-
 
     firefly.style.animationDuration =
     (8 + Math.random()*8) + "s";
 
-
     document.body.appendChild(firefly);
-
 
 
     setTimeout(()=>{
 
-
         firefly.remove();
 
-
     },16000);
-
-
 
 }
 
 
-
 setInterval(
-createFirefly,
-1200
+    createFirefly,
+    1200
 );
-
-
-
-
-
 
 
 /* ======================================================
    FALLING ROSES
 ====================================================== */
 
-
 function createRose(){
-
 
     const rose =
     document.createElement("div");
 
-
     rose.className =
     "rose";
-
 
     rose.innerHTML =
     "🌹";
 
-
     rose.style.left =
     Math.random()*100 + "vw";
-
 
     rose.style.animationDuration =
     (6 + Math.random()*4) + "s";
 
-
     document.body.appendChild(rose);
-
 
 
     setTimeout(()=>{
 
-
         rose.remove();
 
-
     },10000);
-
-
 
 }
 
 
-
 setInterval(
-createRose,
-2500
+    createRose,
+    2500
 );
-
-
-
-
-
 
 
 /* ======================================================
    SHOOTING STAR
 ====================================================== */
 
-
 function createShootingStar(){
-
 
     const star =
     document.createElement("div");
 
-
     star.className =
     "shooting-star";
-
 
     star.style.top =
     Math.random()*250 + "px";
 
-
     star.style.left =
     "100vw";
-
 
     document.body.appendChild(star);
 
 
-
     setTimeout(()=>{
-
 
         star.remove();
 
-
     },1800);
-
-
 
 }
 
 
-
 setInterval(
-createShootingStar,
-9000
+    createShootingStar,
+    9000
 );
-
-
-
-
-
 
 
 /* ======================================================
    SECRET GIFT POPUP
 ====================================================== */
 
-
 const giftButton =
 document.getElementById("giftButton");
 
-
 const giftPopup =
 document.getElementById("giftPopup");
-
 
 const closeGiftButton =
 document.getElementById("closeGift");
 
 
-
 if(
-giftButton &&
-giftPopup &&
-closeGiftButton
+    giftButton &&
+    giftPopup &&
+    closeGiftButton
 ){
-
 
     giftButton.onclick =
     ()=>{
 
-
         giftPopup.style.display =
         "flex";
 
-
     };
-
 
 
     closeGiftButton.onclick =
     ()=>{
 
-
         giftPopup.style.display =
         "none";
 
-
     };
 
-
 }
-
-
-
-
-
-
 
 
 /* ======================================================
    CELEBRATION TEXT
 ====================================================== */
 
-
 window.addEventListener(
 "load",
 ()=>{
-
 
     const celebration =
     document.getElementById(
@@ -1724,41 +1640,26 @@ window.addEventListener(
     );
 
 
-
     if(celebration){
-
 
         setTimeout(()=>{
 
-
-            celebration.style.opacity="1";
-
+            celebration.style.opacity =
+            "1";
 
         },1500);
 
 
-
         setTimeout(()=>{
 
-
-            celebration.style.opacity="0";
-
+            celebration.style.opacity =
+            "0";
 
         },6500);
 
-
-
     }
 
-
-
 });
-
-
-
-
-
-
 
 
 /* ======================================================
@@ -1783,8 +1684,7 @@ function createHeartRain(){
     "-40px";
 
     heart.style.fontSize =
-    (20 + Math.random()*20)
-    + "px";
+    (20 + Math.random()*20) + "px";
 
     heart.style.pointerEvents =
     "none";
@@ -1797,10 +1697,12 @@ function createHeartRain(){
 
     document.body.appendChild(heart);
 
+
     setTimeout(()=>{
 
         heart.style.transform =
         "translateY(120vh)";
+
 
         setTimeout(()=>{
 
@@ -1813,29 +1715,51 @@ function createHeartRain(){
 }
 
 
-// ==========================================
-// MOUSE HEART TRAIL
-// ==========================================
+/* ❤️ HEART RAIN START */
+
+setInterval(
+    createHeartRain,
+    1000
+);
+
+
+/* ==========================================
+   MOUSE HEART TRAIL
+========================================== */
 
 function createMouseHeart(x,y){
 
-    const heart = document.createElement("div");
+    const heart =
+    document.createElement("div");
 
-    heart.className = "mouse-heart";
+    heart.className =
+    "mouse-heart";
+
 
     const emojis = [
+
         "❤️",
         "💖",
         "💕",
         "💜"
+
     ];
 
+
     heart.innerHTML =
-    emojis[Math.floor(Math.random()*emojis.length)];
+    emojis[
+        Math.floor(
+            Math.random()*emojis.length
+        )
+    ];
 
-    heart.style.left = x + "px";
 
-    heart.style.top = y + "px";
+    heart.style.left =
+    x + "px";
+
+    heart.style.top =
+    y + "px";
+
 
     document.body.appendChild(heart);
 
@@ -1849,7 +1773,9 @@ function createMouseHeart(x,y){
 }
 
 
-// Desktop
+/* ==========================================
+   DESKTOP MOUSE HEART TRAIL
+========================================== */
 
 document.addEventListener(
 "mousemove",
@@ -1863,22 +1789,44 @@ document.addEventListener(
 });
 
 
-// Mobile
+/* ==========================================
+   MOBILE TOUCH HEART TRAIL
+========================================== */
 
 document.addEventListener(
 "touchmove",
 (e)=>{
 
-    const touch = e.touches[0];
+    const touch =
+    e.touches[0];
 
-    createMouseHeart(
-        touch.clientX,
-        touch.clientY
-    );
+
+    if(touch){
+
+        createMouseHeart(
+            touch.clientX,
+            touch.clientY
+        );
+
+    }
 
 });
 
 
-console.log("✅ Script Part 4 Loaded Successfully ❤️");
+/* ======================================================
+   PART 4 COMPLETE
+====================================================== */
 
-alert("Script Loaded Successfully ❤️");
+console.log(
+"✅ Script Part 4 Loaded Successfully ❤️"
+);
+
+
+/* ======================================================
+   FINAL SCRIPT CHECK
+====================================================== */
+
+alert(
+"Script Loaded Successfully ❤️"
+);
+```
