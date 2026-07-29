@@ -1070,19 +1070,19 @@ transform:scale(1.12);
 
     left:50%;
 
-    top:25px;
+    top:130px;
 
-    transform:translateX(-50%) translateY(80px);
+    transform:translateX(-50%);
 
     width:88%;
 
-    height:260px;
+    height:150px;
 
     background:#fff;
 
     border-radius:15px;
 
-    padding:22px;
+    padding:20px;
 
     overflow:auto;
 
@@ -1094,6 +1094,7 @@ transform:scale(1.12);
 
     box-shadow:0 10px 30px rgba(0,0,0,.25);
 
+}
 }
 
 }
