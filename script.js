@@ -1765,62 +1765,50 @@ window.addEventListener(
    HEART RAIN
 ====================================================== */
 
-
 function createHeartRain(){
-
 
     const heart =
     document.createElement("div");
 
-
     heart.innerHTML =
     "❤️";
-
 
     heart.style.position =
     "fixed";
 
-
     heart.style.left =
     Math.random()*100 + "vw";
 
-
     heart.style.top =
     "-40px";
-
 
     heart.style.fontSize =
     (20 + Math.random()*20)
     + "px";
 
-
     heart.style.pointerEvents =
     "none";
-
 
     heart.style.zIndex =
     "999";
 
-
     heart.style.transition =
     "8s linear";
 
-
     document.body.appendChild(heart);
 
-
-
     setTimeout(()=>{
-
 
         heart.style.transform =
         "translateY(120vh)";
 
-    setTimeout(()=>{
+        setTimeout(()=>{
 
-        heart.remove();
+            heart.remove();
 
-    },8000);
+        },8000);
+
+    },100);
 
 }
 
