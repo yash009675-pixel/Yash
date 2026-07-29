@@ -745,19 +745,11 @@ if(themeButton){
 
 
 
-        if(
-        document.body.classList.contains("light")
-        ){
-
-
-            themeButton.innerHTML="☀️";
-
-
-        }
-        else{
-
-
-            themeButton.innerHTML="🌙";
+        if(document.body.classList.contains("light")){
+    themeButton.innerHTML="☀️ Day";
+}else{
+    themeButton.innerHTML="🌙 Night";
+}
 
 
         }
