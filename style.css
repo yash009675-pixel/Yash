@@ -2641,3 +2641,133 @@ transform:none !important;
 }
 
 }
+/* =========================================
+PHASE 7B.4
+FINAL SCENE
+========================================= */
+
+#finalScene{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    radial-gradient(circle,#24003b,#000);
+
+    backdrop-filter:blur(20px);
+
+    z-index:999999;
+
+    animation:fadeScene .8s ease;
+
+}
+
+.final-content{
+
+    width:90%;
+
+    max-width:650px;
+
+    padding:45px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:white;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.4);
+
+}
+
+.final-content h1{
+
+    font-size:48px;
+
+    font-family:'Playfair Display',serif;
+
+    margin-bottom:25px;
+
+}
+
+.final-content p{
+
+    line-height:2;
+
+    font-size:18px;
+
+    color:#f6e7ff;
+
+}
+
+#closeFinal{
+
+    margin-top:35px;
+
+    padding:16px 36px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:17px;
+
+    background:
+    linear-gradient(135deg,#ff4fd8,#8b5cf6);
+
+}
+
+@keyframes fadeScene{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.final-content{
+
+padding:28px;
+
+}
+
+.final-content h1{
+
+font-size:34px;
+
+}
+
+.final-content p{
+
+font-size:16px;
+
+}
+
+}
