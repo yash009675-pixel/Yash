@@ -524,6 +524,14 @@ animation:buttonFloat 3s ease-in-out infinite;
     transition:.35s;
 
     box-shadow:0 10px 25px rgba(0,0,0,.25);
+   #themeBtn{
+    color:#222;
+    text-shadow:none;
+}
+
+body:not(.light) #themeBtn{
+    color:#fff;
+}
 
 }
 
