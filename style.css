@@ -2430,3 +2430,93 @@ opacity:0;
 }
 
 }
+/* =========================================
+PHASE 7B
+PHOTO VIEWER
+========================================= */
+
+#photoViewer{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.92);
+
+    backdrop-filter:blur(12px);
+
+    z-index:999999;
+
+    animation:viewerFade .35s ease;
+
+}
+
+#viewerImage{
+
+    max-width:92%;
+
+    max-height:90%;
+
+    border-radius:20px;
+
+    box-shadow:0 25px 70px rgba(0,0,0,.6);
+
+    animation:imageZoom .35s ease;
+
+}
+
+#closeViewer{
+
+    position:absolute;
+
+    top:25px;
+
+    right:30px;
+
+    font-size:34px;
+
+    color:white;
+
+    cursor:pointer;
+
+    user-select:none;
+
+}
+
+@keyframes viewerFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes imageZoom{
+
+    from{
+
+        transform:scale(.85);
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+    }
+
+}
