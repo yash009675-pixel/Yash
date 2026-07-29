@@ -21,7 +21,7 @@ performanceMode
 ? "📱 Performance Mode Enabled"
 : "💻 Full Effects Enabled"
 );
-alert("START JS ❤️");
+
 /* ======================================================
    Yash ❤️ Arpita
    Script.js Version 2.0 FINAL
