@@ -1809,3 +1809,65 @@ alert(
 "Script Loaded Successfully ❤️"
 );
 
+/* ======================================================
+PHASE 7B
+PHOTO VIEWER
+====================================================== */
+
+const photoViewer =
+document.getElementById("photoViewer");
+
+const viewerImage =
+document.getElementById("viewerImage");
+
+const closeViewer =
+document.getElementById("closeViewer");
+
+document.querySelectorAll("img").forEach(img=>{
+
+    img.addEventListener("click",()=>{
+
+        if(
+            photoViewer &&
+            viewerImage
+        ){
+
+            viewerImage.src = img.src;
+
+            photoViewer.style.display = "flex";
+
+            document.body.style.overflow = "hidden";
+
+        }
+
+    });
+
+});
+
+if(closeViewer){
+
+    closeViewer.onclick = ()=>{
+
+        photoViewer.style.display = "none";
+
+        document.body.style.overflow = "auto";
+
+    };
+
+}
+
+if(photoViewer){
+
+    photoViewer.addEventListener("click",(e)=>{
+
+        if(e.target===photoViewer){
+
+            photoViewer.style.display="none";
+
+            document.body.style.overflow="auto";
+
+        }
+
+    });
+
+}
