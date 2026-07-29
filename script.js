@@ -1666,54 +1666,34 @@ window.addEventListener(
    HEART RAIN
 ====================================================== */
 
-function createHeartRain(){
+function createHeartRain() {
 
-    const heart =
-    document.createElement("div");
+    const heart = document.createElement("div");
 
-    heart.innerHTML =
-    "❤️";
+    heart.innerHTML = "❤️";
 
-    heart.style.position =
-    "fixed";
-
-    heart.style.left =
-    Math.random()*100 + "vw";
-
-    heart.style.top =
-    "-40px";
-
-    heart.style.fontSize =
-    (20 + Math.random()*20) + "px";
-
-    heart.style.pointerEvents =
-    "none";
-
-    heart.style.zIndex =
-    "999";
-
-    heart.style.transition =
-    "8s linear";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "-40px";
+    heart.style.fontSize = (20 + Math.random() * 20) + "px";
+    heart.style.pointerEvents = "none";
+    heart.style.zIndex = "999";
+    heart.style.transition = "transform 8s linear";
 
     document.body.appendChild(heart);
 
+    setTimeout(() => {
+        heart.style.transform = "translateY(120vh)";
+    }, 100);
 
-    setTimeout(()=>{
-
-        heart.style.transform =
-        "translateY(120vh)";
-
-
-        setTimeout(()=>{
-
-            heart.remove();
-
-        },8000);
-
-    },100);
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
 
 }
 
+// Heart Rain Start
+setInterval(createHeartRain, 500);
 
 /* ❤️ HEART RAIN START */
 
