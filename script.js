@@ -2035,3 +2035,55 @@ card.style.transform=
 });
 
 });
+/* ======================================================
+PHASE 7B.4
+GRAND FINALE
+====================================================== */
+
+const finalScene =
+document.getElementById("finalScene");
+
+const closeFinal =
+document.getElementById("closeFinal");
+
+// Show after 45 seconds
+
+setTimeout(()=>{
+
+if(finalScene){
+
+finalScene.style.display="flex";
+
+document.body.style.overflow="hidden";
+
+}
+
+},45000);
+
+// Close
+
+if(closeFinal){
+
+closeFinal.onclick=()=>{
+
+finalScene.style.display="none";
+
+document.body.style.overflow="auto";
+
+};
+
+}
+
+// ESC key
+
+document.addEventListener("keydown",(e)=>{
+
+if(e.key==="Escape" && finalScene){
+
+finalScene.style.display="none";
+
+document.body.style.overflow="auto";
+
+}
+
+});
