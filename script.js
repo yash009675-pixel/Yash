@@ -1438,7 +1438,6 @@ console.log(
 "✅ Script Part 3 Loaded Successfully ❤️"
 );
 
-```javascript
 /* ======================================================
    Yash ❤️ Arpita
    Script.js Version 2.0 FINAL
@@ -1809,4 +1808,4 @@ console.log(
 alert(
 "Script Loaded Successfully ❤️"
 );
-```
+
