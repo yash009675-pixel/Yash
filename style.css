@@ -2858,3 +2858,35 @@ GLASS SHINE
     left:100%;
 
 }
+/* =========================================
+VERSION 3.1
+TITLE GLOW
+========================================= */
+
+.title,
+.story-title,
+.section-title{
+
+    animation:titleGlow 4s ease-in-out infinite;
+
+}
+
+@keyframes titleGlow{
+
+    0%,100%{
+
+        text-shadow:
+        0 0 12px rgba(255,255,255,.35),
+        0 0 30px rgba(255,79,216,.45);
+
+    }
+
+    50%{
+
+        text-shadow:
+        0 0 18px rgba(255,255,255,.7),
+        0 0 45px rgba(155,92,255,.7);
+
+    }
+
+}
