@@ -2627,3 +2627,17 @@ PHASE 7B.3
     0 0 30px rgba(255,79,216,.25);
 
 }
+@media(max-width:768px){
+
+.card,
+.memory-content,
+.letter-card,
+.popup-card,
+.gift-card,
+.proposal-card{
+
+transform:none !important;
+
+}
+
+}
