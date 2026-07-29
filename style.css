@@ -2591,3 +2591,39 @@ font-size:22px;
 }
 
 }
+/* =========================================
+PHASE 7B.3
+3D GLASS EFFECT
+========================================= */
+
+.card,
+.memory-content,
+.letter-card,
+.popup-card,
+.gift-card,
+.proposal-card{
+
+    transform-style:preserve-3d;
+
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+
+    will-change:transform;
+
+}
+
+.card:hover,
+.memory-content:hover,
+.letter-card:hover,
+.popup-card:hover,
+.gift-card:hover,
+.proposal-card:hover{
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.35),
+
+    0 0 30px rgba(255,79,216,.25);
+
+}
