@@ -431,6 +431,32 @@ No 🙈
 </div>   
 <script src="./script.js?v=10"></script>
 
-</body>
+    <!-- Aapki website ka existing content -->
 
+
+    <!-- 🎵 Music Code -->
+    <audio id="bgMusic" loop>
+        <source src="Music.mp3/song.mp3" type="audio/mpeg">
+    </audio>
+
+    <button onclick="toggleMusic()" id="musicBtn">
+        🎵 Play Music
+    </button>
+
+    <script>
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
+
+    function toggleMusic() {
+        if (music.paused) {
+            music.play();
+            musicBtn.innerHTML = "⏸️ Pause Music";
+        } else {
+            music.pause();
+            musicBtn.innerHTML = "🎵 Play Music";
+        }
+    }
+    </script>
+
+</body>
 </html>
