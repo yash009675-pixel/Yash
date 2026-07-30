@@ -752,10 +752,6 @@ if(themeButton){
 }
 
 
-        }
-
-
-
     });
 
 
@@ -1706,15 +1702,8 @@ function createHeartRain() {
 
 }
 
-// Heart Rain Start
-setInterval(createHeartRain, 500);
-
-/* ❤️ HEART RAIN START */
-
-setInterval(
-    createHeartRain,
-    1000
-);
+// Heart Rain Start (the original code started it twice).
+setInterval(createHeartRain, 850);
 
 
 /* ==========================================
@@ -1771,9 +1760,17 @@ function createMouseHeart(x,y){
    DESKTOP MOUSE HEART TRAIL
 ========================================== */
 
+let lastMouseHeart = 0;
+
 document.addEventListener(
 "mousemove",
 (e)=>{
+
+    const now = performance.now();
+
+    if(now-lastMouseHeart<90) return;
+
+    lastMouseHeart = now;
 
     createMouseHeart(
         e.clientX,
@@ -1787,12 +1784,20 @@ document.addEventListener(
    MOBILE TOUCH HEART TRAIL
 ========================================== */
 
+let lastTouchHeart = 0;
+
 document.addEventListener(
 "touchmove",
 (e)=>{
 
     const touch =
     e.touches[0];
+
+    const now = performance.now();
+
+    if(!touch || now-lastTouchHeart<140) return;
+
+    lastTouchHeart = now;
 
 
     if(touch){
@@ -1832,7 +1837,7 @@ document.getElementById("viewerImage");
 const closeViewer =
 document.getElementById("closeViewer");
 
-document.querySelectorAll("img").forEach(img=>{
+document.querySelectorAll(".memory-content img, .slide img").forEach(img=>{
 
     img.addEventListener("click",()=>{
 
@@ -1886,7 +1891,7 @@ PHOTO NAVIGATION
 ====================================================== */
 
 const galleryImages =
-Array.from(document.querySelectorAll(".slide img"));
+Array.from(document.querySelectorAll(".memory-content img, .slide img"));
 
 const prevPhoto =
 document.getElementById("prevPhoto");
@@ -2108,7 +2113,246 @@ document.addEventListener(
 
 ()=>{
 
-pageVisible =
-!document.hidden;
+    pageVisible =
+    !document.hidden;
+
+});
+
+
+
+/* ======================================================
+   COMPLETED FEATURES
+   The original HTML/CSS already contained these effects,
+   but their JavaScript was missing.
+====================================================== */
+
+const typingText = document.getElementById("typingText");
+
+if(typingText){
+
+    const fullText = typingText.textContent.trim();
+
+    typingText.textContent = "";
+
+    let typingIndex = 0;
+
+    const typeStoryTitle = ()=>{
+
+        typingText.textContent += fullText.charAt(typingIndex);
+
+        typingIndex++;
+
+        if(typingIndex<fullText.length){
+
+            setTimeout(typeStoryTitle,45);
+
+        }
+
+    };
+
+    setTimeout(typeStoryTitle,450);
+
+}
+
+
+
+const proposalButton = document.getElementById("proposalButton");
+const proposalPopup = document.getElementById("proposalPopup");
+const yesButton = document.getElementById("yesBtn");
+const noButton = document.getElementById("noBtn");
+
+if(proposalButton && proposalPopup){
+
+    proposalButton.addEventListener("click",()=>{
+
+        if(giftPopup){
+
+            giftPopup.style.display = "none";
+
+        }
+
+        proposalPopup.style.display = "flex";
+
+    });
+
+}
+
+
+
+function moveNoButton(){
+
+    if(!noButton) return;
+
+    const x = Math.round((Math.random()*160)-80);
+    const y = Math.round((Math.random()*80)-40);
+
+    noButton.style.transform = `translate(${x}px,${y}px)`;
+    noButton.textContent = "Are you sure? 🙈";
+
+}
+
+noButton?.addEventListener("pointerenter",moveNoButton);
+noButton?.addEventListener("click",moveNoButton);
+
+
+
+yesButton?.addEventListener("click",()=>{
+
+    if(proposalPopup){
+
+        proposalPopup.style.display = "none";
+
+    }
+
+    const celebration = document.getElementById("celebrationText");
+
+    if(celebration){
+
+        celebration.textContent = "💖 You made me the happiest! 💖";
+        celebration.style.opacity = "1";
+
+        setTimeout(()=>{
+
+            celebration.style.opacity = "0";
+
+        },4500);
+
+    }
+
+    launchConfetti();
+    launchFireworks();
+
+});
+
+
+
+function launchConfetti(){
+
+    const confettiContainer = document.getElementById("confettiContainer") || document.body;
+    const colours = ["#ff4fd8","#9b5cff","#ffffff","#ffd166","#ff8cc8"];
+
+    for(let i=0;i<70;i++){
+
+        const confetti = document.createElement("span");
+
+        confetti.className = "confetti";
+        confetti.style.left = `${Math.random()*100}vw`;
+        confetti.style.background = colours[i%colours.length];
+        confetti.style.animationDuration = `${2.4+Math.random()*2.3}s`;
+        confetti.style.animationDelay = `${Math.random()*.35}s`;
+
+        confettiContainer.appendChild(confetti);
+
+        setTimeout(()=>{
+
+            confetti.remove();
+
+        },5200);
+
+    }
+
+}
+
+
+
+function launchFireworks(){
+
+    const canvas = document.getElementById("fireworksCanvas");
+
+    if(!canvas) return;
+
+    const context = canvas.getContext("2d");
+
+    if(!context) return;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const colours = ["#ff4fd8","#a78bfa","#ffffff","#ffd166"];
+    const particles = [];
+
+    for(let burst=0;burst<4;burst++){
+
+        const centerX = canvas.width*(.22+Math.random()*.56);
+        const centerY = canvas.height*(.18+Math.random()*.4);
+
+        for(let i=0;i<48;i++){
+
+            const angle = (Math.PI*2*i)/48;
+            const speed = 2+Math.random()*4;
+
+            particles.push({
+                x:centerX,
+                y:centerY,
+                xSpeed:Math.cos(angle)*speed,
+                ySpeed:Math.sin(angle)*speed,
+                colour:colours[(i+burst)%colours.length],
+                life:70+Math.random()*36
+            });
+
+        }
+
+    }
+
+    const animateFireworks = ()=>{
+
+        context.clearRect(0,0,canvas.width,canvas.height);
+
+        particles.forEach(particle=>{
+
+            particle.x += particle.xSpeed;
+            particle.y += particle.ySpeed;
+            particle.ySpeed += .045;
+            particle.life -= 1;
+
+            context.globalAlpha = Math.max(particle.life/106,0);
+            context.fillStyle = particle.colour;
+            context.beginPath();
+            context.arc(particle.x,particle.y,2.3,0,Math.PI*2);
+            context.fill();
+
+        });
+
+        context.globalAlpha = 1;
+
+        for(let i=particles.length-1;i>=0;i--){
+
+            if(particles[i].life<=0){
+
+                particles.splice(i,1);
+
+            }
+
+        }
+
+        if(particles.length){
+
+            requestAnimationFrame(animateFireworks);
+
+        }else{
+
+            context.clearRect(0,0,canvas.width,canvas.height);
+
+        }
+
+    };
+
+    animateFireworks();
+
+}
+
+
+
+document.addEventListener("keydown",(event)=>{
+
+    if(event.key!=="Escape") return;
+
+    if(giftPopup) giftPopup.style.display = "none";
+
+    if(proposalPopup) proposalPopup.style.display = "none";
+
+    if(photoViewer) photoViewer.style.display = "none";
+
+    document.body.style.overflow = "auto";
 
 });
