@@ -233,7 +233,186 @@ h1, h2 { margin: 0; font-family: "Playfair Display", serif; letter-spacing: -0.0
   .gallery-section { margin-top: 92px; }
   .closing-message { margin-top: 94px; }
 }
+```css
+/* =========================================
+   YASH PREMIUM NAVIGATION
+   Uses YOUR existing website colors
+   ========================================= */
 
+.yash-nav-links {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 5px;
+
+  border: 1px solid
+    rgba(255,255,255,0.10);
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.025);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+}
+
+
+/* Navigation links */
+
+.yash-nav-link {
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 34px;
+
+  padding: 7px 13px;
+
+  border: 1px solid
+    transparent;
+
+  border-radius: 999px;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  font-size: 0.72rem;
+
+  letter-spacing: 0.03em;
+
+  white-space: nowrap;
+
+  transition:
+    background 300ms ease,
+    border-color 300ms ease,
+    transform 300ms ease,
+    opacity 300ms ease;
+
+}
+
+
+.yash-nav-link:hover {
+
+  border-color:
+    rgba(255,255,255,0.12);
+
+  background:
+    rgba(255,255,255,0.06);
+
+  transform:
+    translateY(-1px);
+
+}
+
+
+/* Day / Night */
+
+.yash-theme-button {
+
+  width: 36px;
+
+  height: 36px;
+
+  flex: 0 0 36px;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 0;
+
+  border: 1px solid
+    rgba(255,255,255,0.12);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  color: inherit;
+
+  cursor: pointer;
+
+  transition:
+    transform 400ms ease,
+    background 300ms ease,
+    border-color 300ms ease;
+
+}
+
+
+.yash-theme-button:hover {
+
+  transform:
+    rotate(18deg)
+    scale(1.04);
+
+  background:
+    rgba(255,255,255,0.08);
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .yash-nav-links {
+
+    gap: 3px;
+
+    padding: 4px;
+
+  }
+
+
+  .yash-nav-link {
+
+    padding:
+      6px 8px;
+
+    font-size:
+      0.62rem;
+
+  }
+
+
+  .yash-theme-button {
+
+    width: 32px;
+    height: 32px;
+
+    flex-basis: 32px;
+
+    font-size: 0.85rem;
+
+  }
+
+}
+
+
+@media (max-width: 460px) {
+
+  .yash-nav-link {
+
+    padding:
+      5px 6px;
+
+    font-size:
+      0.56rem;
+
+  }
+
+}
+```
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
