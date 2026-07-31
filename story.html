@@ -1,108 +1,459 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The love story of Yash and Arpita.">
-  <title>Our Story · Yash &amp; Arpita</title>
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1"
+
+>
+
+<meta
+name="description"
+content="Our story — Yash & Arpita."
+
+>
+
+  <title>Our Story — Yash &hearts; Arpita</title>
+
+  <!-- Google Fonts -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Story CSS -->
+
+  <link rel="stylesheet" href="story.css">
 </head>
-<body class="story-page">
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Home">Y<span>&hearts;</span>A</a>
-    <div class="header-actions">
-      <a class="text-link" href="index.html">← Home</a>
-      <button class="icon-button" id="themeButton" type="button" aria-label="Switch colour theme" title="Switch colour theme">☀️</button>
-    </div>
+
+<body>
+
+  <!-- =====================================
+       INTRO
+  ====================================== -->
+
+  <div class="story-intro" id="storyIntro">
+    <p>Our Story <span>&hearts;</span></p>
+  </div>
+
+  <!-- =====================================
+       HEADER
+  ====================================== -->
+
+  <header class="story-header">
+
+```
+<a
+  href="index.html"
+  class="story-brand"
+  aria-label="Back to home"
+>
+  Y<span>&hearts;</span>A
+</a>
+
+<a
+  href="index.html"
+  class="back-link"
+>
+  ← Home
+</a>
+```
+
   </header>
 
-  <main class="section-shell story-shell">
-    <section class="story-heading">
-      <p class="eyebrow">Our favourite story</p>
-      <h1>Every moment led<br>to <em>us.</em></h1>
-      <p>Three small chapters, and a lifetime still to write.</p>
-    </section>
+  <!-- =====================================
+       MAIN
+  ====================================== -->
 
-    <section class="timeline" aria-label="Our relationship timeline">
-      <article class="memory-card">
-        <div class="memory-art memory-art-one" aria-hidden="true"><span>01</span></div>
-        <div class="memory-copy">
-          <p class="memory-date">22 January 2021</p>
-          <h2>Our beginning</h2>
-          <p>One beautiful moment changed my life forever.</p>
-          <details>
-            <summary>Read this memory</summary>
-            <p>The day we started talking, I did not know you would become such an important part of my life. I am so grateful that you did.</p>
-          </details>
-        </div>
-      </article>
+  <main>
 
-      <article class="memory-card memory-card-reverse">
-        <div class="memory-art memory-art-two" aria-hidden="true"><span>02</span></div>
-        <div class="memory-copy">
-          <p class="memory-date">Late-night talks</p>
-          <h2>From hello to everything</h2>
-          <p>One hello became conversations I never wanted to end.</p>
-          <details>
-            <summary>Read this memory</summary>
-            <p>Every notification from you made an ordinary day feel special. Those little conversations became my favourite habit.</p>
-          </details>
-        </div>
-      </article>
+```
+<!-- =====================================
+     HERO
+====================================== -->
 
-      <article class="memory-card">
-        <div class="memory-art memory-art-three" aria-hidden="true"><span>03</span></div>
-        <div class="memory-copy">
-          <p class="memory-date">Today &amp; always</p>
-          <h2>Still choosing you</h2>
-          <p>Years may pass, but my favourite place will always be beside you.</p>
-          <details>
-            <summary>Read this memory</summary>
-            <p>No matter how many memories we make, I will keep choosing you—every day, in every season, for every tomorrow.</p>
-          </details>
-        </div>
-      </article>
-    </section>
+<section class="story-hero">
 
-    <section class="gallery-section" aria-labelledby="galleryTitle">
-      <p class="eyebrow">Memory gallery</p>
-      <h2 id="galleryTitle">The little things I love</h2>
-      <p class="gallery-intro">Tap a card to open the memory.</p>
-      <div class="memory-gallery">
-        <button class="gallery-card gallery-card-one" type="button" data-memory-title="The first smile" data-memory-text="A single smile can hold an entire world. This is one of the memories that still makes my heart feel full."><span>✦</span><strong>The first smile</strong></button>
-        <button class="gallery-card gallery-card-two" type="button" data-memory-title="Us, laughing" data-memory-text="The best memories are not always planned. Sometimes they are simply the moments where we laughed until nothing else mattered."><span>♥</span><strong>Us, laughing</strong></button>
-        <button class="gallery-card gallery-card-three" type="button" data-memory-title="Forever starts here" data-memory-text="Every day with you feels like another page in my favourite story. I cannot wait to keep writing it with you."><span>∞</span><strong>Forever starts here</strong></button>
+  <p class="eyebrow">
+    A story worth remembering
+  </p>
+
+  <h1>
+    Our little
+    <em>story.</em>
+  </h1>
+
+  <p class="story-intro-text">
+    It started with something simple.
+    And somehow, it became one of the
+    most beautiful parts of our lives.
+  </p>
+
+  <div class="scroll-hint">
+    <span></span>
+    <p>Scroll slowly</p>
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     TIMELINE
+====================================== -->
+
+<section class="timeline-section">
+
+  <div class="timeline">
+
+
+    <!-- ================================
+         MEMORY 01
+    ================================= -->
+
+    <article class="story-card">
+
+      <div class="story-number">
+        01
       </div>
-      <p class="photo-note">These are ready-made memory cards. You can later replace them with your own photos—see README.md for the two small changes needed.</p>
-    </section>
 
-    <section class="closing-message">
-      <p class="eyebrow">One more thing</p>
-      <h2>Thank you for being the best part of my life.</h2>
-      <p>Every love story is beautiful, but ours will always be my favourite.</p>
-      <button class="button button-primary" id="giftButton" type="button">Open a small surprise <span aria-hidden="true">✦</span></button>
-    </section>
+      <div class="story-visual visual-one">
+        <span>22</span>
+        <small>January 2021</small>
+      </div>
+
+      <div class="story-content">
+
+        <p class="story-date">
+          The beginning
+        </p>
+
+        <h2>
+          And then,
+          there was us.
+        </h2>
+
+        <p>
+          Every beautiful story has a beginning.
+          Ours began on 22 January 2021.
+          Maybe at that moment we didn't know
+          how important this day would become.
+        </p>
+
+        <p>
+          But looking back now, it feels like
+          life quietly gave me one of its
+          most beautiful gifts.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- ================================
+         MEMORY 02
+    ================================= -->
+
+    <article class="story-card story-card-reverse">
+
+      <div class="story-number">
+        02
+      </div>
+
+      <div class="story-visual visual-two">
+        <span>♥</span>
+        <small>The little things</small>
+      </div>
+
+      <div class="story-content">
+
+        <p class="story-date">
+          Somewhere along the way
+        </p>
+
+        <h2>
+          It was never
+          just the big moments.
+        </h2>
+
+        <p>
+          It was the small conversations,
+          random laughs, silly moments,
+          unexpected messages and those
+          little things that slowly became
+          unforgettable memories.
+        </p>
+
+        <p>
+          Somehow, ordinary days started
+          feeling a little more special
+          simply because you were there.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- ================================
+         MEMORY 03
+    ================================= -->
+
+    <article class="story-card">
+
+      <div class="story-number">
+        03
+      </div>
+
+      <div class="story-visual visual-three">
+        <span>∞</span>
+        <small>Growing together</small>
+      </div>
+
+      <div class="story-content">
+
+        <p class="story-date">
+          Then &amp; now
+        </p>
+
+        <h2>
+          Somewhere between
+          then and now...
+        </h2>
+
+        <p>
+          We changed.
+          We learned.
+          We grew.
+          And through everything,
+          there were still moments
+          that reminded me why
+          having you in my life matters.
+        </p>
+
+        <p>
+          Five years can sound like
+          just a number.
+          But for us, it is thousands
+          of little memories.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- ================================
+         MEMORY 04
+    ================================= -->
+
+    <article class="story-card story-card-reverse">
+
+      <div class="story-number">
+        04
+      </div>
+
+      <div class="story-visual visual-four">
+        <span>∞</span>
+        <small>Still choosing you</small>
+      </div>
+
+      <div class="story-content">
+
+        <p class="story-date">
+          Today
+        </p>
+
+        <h2>
+          And I would still
+          choose you.
+        </h2>
+
+        <p>
+          If I could go back to the beginning,
+          knowing everything I know today,
+          I would still choose the same story.
+        </p>
+
+        <p>
+          Because some people don't simply
+          become a part of your life.
+          They become a part of who you are.
+        </p>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     MEMORY GALLERY
+====================================== -->
+
+<section class="memory-section">
+
+  <p class="eyebrow">
+    Little pieces of us
+  </p>
+
+  <h2>
+    Some moments
+    <em>stay forever.</em>
+  </h2>
+
+  <p class="section-description">
+    Not every memory needs a photograph.
+    Some memories simply live quietly
+    inside the heart.
+  </p>
+
+
+  <div class="memory-grid">
+
+    <button
+      class="memory-box memory-one"
+      data-title="The beginning"
+      data-message="Every story has a first page. Ours will always have 22 January 2021 written on it."
+    >
+      <span>01</span>
+      <strong>The beginning</strong>
+      <small>Click to open</small>
+    </button>
+
+
+    <button
+      class="memory-box memory-two"
+      data-title="The little things"
+      data-message="The smallest moments often become the memories we remember the longest."
+    >
+      <span>02</span>
+      <strong>The little things</strong>
+      <small>Click to open</small>
+    </button>
+
+
+    <button
+      class="memory-box memory-three"
+      data-title="Our memories"
+      data-message="Years later, it is not the perfect moments that matter. It is the real ones."
+    >
+      <span>03</span>
+      <strong>Our memories</strong>
+      <small>Click to open</small>
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     FINAL MESSAGE
+====================================== -->
+
+<section class="story-ending">
+
+  <p class="eyebrow">
+    One last thought
+  </p>
+
+  <h2>
+    Some stories
+    are meant to be
+    <em>continued.</em>
+  </h2>
+
+  <p>
+    This isn't the end of our story.
+    It's simply another page.
+  </p>
+
+  <div class="ending-heart">
+    &hearts;
+  </div>
+
+  <a
+    href="index.html"
+    class="story-button"
+  >
+    Back to our little world
+    <span>→</span>
+  </a>
+
+</section>
+```
+
   </main>
 
-  <dialog class="memory-dialog" id="memoryDialog" aria-labelledby="dialogTitle">
-    <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
-    <p class="eyebrow">A memory</p>
-    <h2 id="dialogTitle"></h2>
-    <p id="dialogText"></p>
+  <!-- =====================================
+       MEMORY DIALOG
+  ====================================== -->
+
+  <dialog
+    class="memory-dialog"
+    id="memoryDialog"
+  >
+
+```
+<button
+  class="dialog-close"
+  id="dialogClose"
+  type="button"
+  aria-label="Close"
+>
+  ×
+</button>
+
+<p class="eyebrow">
+  A little memory
+</p>
+
+<h2 id="dialogTitle">
+  The beginning
+</h2>
+
+<p id="dialogMessage">
+  Every beautiful story has a beginning.
+</p>
+
+<p class="dialog-signature">
+  With love,
+  <strong>Yash ♥</strong>
+</p>
+```
+
   </dialog>
 
-  <dialog class="memory-dialog gift-dialog" id="giftDialog" aria-labelledby="giftTitle">
-    <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
-    <p class="eyebrow">For Arpita</p>
-    <h2 id="giftTitle">A small promise</h2>
-    <p>Thank you for filling my life with happiness, love, and beautiful memories. No matter what happens, I will always choose you.</p>
-    <p class="dialog-signature">Forever &amp; always,<br>Yash ♥</p>
-  </dialog>
+  <!-- =====================================
+       FOOTER
+  ====================================== -->
 
-  <footer class="site-footer">Made with <span aria-label="love">&hearts;</span> for Arpita · <span id="currentYear"></span></footer>
-  <script src="script.js" defer></script>
+  <footer class="story-footer">
+
+```
+Made with
+<span>&hearts;</span>
+for Arpita
+·
+<span id="currentYear"></span>
+```
+
+  </footer>
+
+  <!-- JS -->
+
+  <script src="story.js" defer></script>
+
 </body>
 </html>
