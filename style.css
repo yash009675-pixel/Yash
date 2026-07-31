@@ -412,7 +412,527 @@ h1, h2 { margin: 0; font-family: "Playfair Display", serif; letter-spacing: -0.0
   }
 
 }
+```css
+/* ==========================================
+   PREMIUM INTERACTIVE LOVE LETTER
+   YASH & ARPITA
+========================================== */
+
+.envelope-area {
+  width: min(100%, 760px);
+  margin: 48px auto 0;
+
+  min-height: 430px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  perspective: 1200px;
+}
+
+
+/* ==========================================
+   ENVELOPE
+========================================== */
+
+.love-envelope {
+  position: relative;
+
+  width: min(88vw, 520px);
+  height: 315px;
+
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  color: inherit;
+
+  cursor: pointer;
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.6s cubic-bezier(.2,.75,.2,1);
+}
+
+
+.love-envelope:hover {
+  transform: translateY(-7px);
+}
+
+
+/* ==========================================
+   ENVELOPE FRONT
+========================================== */
+
+.envelope-front {
+  position: absolute;
+  inset: 0;
+
+  z-index: 5;
+
+  overflow: hidden;
+
+  border:
+    1px solid var(--line, rgba(255,255,255,.14));
+
+  border-radius: 18px;
+
+  background:
+    var(--surface, rgba(255,255,255,.055));
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.20);
+}
+
+
+/* ==========================================
+   FLAP
+========================================== */
+
+.envelope-flap {
+  position: absolute;
+
+  z-index: 8;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 58%;
+
+  transform-origin: top center;
+
+  clip-path:
+    polygon(
+      0 0,
+      100% 0,
+      50% 100%
+    );
+
+  background:
+    var(--surface, rgba(255,255,255,.075));
+
+  border-top:
+    1px solid
+    var(--line, rgba(255,255,255,.10));
+
+  transition:
+    transform .9s cubic-bezier(.2,.7,.2,1);
+}
+
+
+/* ==========================================
+   ENVELOPE FOLDS
+========================================== */
+
+.envelope-fold {
+  position: absolute;
+
+  z-index: 6;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: .55;
+}
+
+
+.envelope-fold-left {
+  clip-path:
+    polygon(
+      0 0,
+      50% 50%,
+      0 100%
+    );
+
+  border-right:
+    1px solid
+    var(--line, rgba(255,255,255,.10));
+}
+
+
+.envelope-fold-right {
+  clip-path:
+    polygon(
+      100% 0,
+      50% 50%,
+      100% 100%
+    );
+
+  border-left:
+    1px solid
+    var(--line, rgba(255,255,255,.10));
+}
+
+
+.envelope-fold-bottom {
+  clip-path:
+    polygon(
+      0 100%,
+      50% 50%,
+      100% 100%
+    );
+
+  border-top:
+    1px solid
+    var(--line, rgba(255,255,255,.10));
+}
+
+
+/* ==========================================
+   HEART
+========================================== */
+
+.envelope-heart {
+
+  position: absolute;
+
+  z-index: 10;
+
+  left: 50%;
+  top: 52%;
+
+  width: 62px;
+  height: 62px;
+
+  display: grid;
+  place-items: center;
+
+  transform:
+    translate(-50%, -50%);
+
+  border:
+    1px solid
+    var(--line, rgba(255,255,255,.14));
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,.055);
+
+  font-size: 1.35rem;
+
+  transition:
+    opacity .35s ease,
+    transform .45s ease;
+}
+
+
+/* ==========================================
+   LABEL
+========================================== */
+
+.envelope-label {
+
+  position: absolute;
+
+  z-index: 10;
+
+  left: 0;
+  bottom: 28px;
+
+  width: 100%;
+
+  text-align: center;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.05rem;
+
+  opacity: .82;
+
+  transition:
+    opacity .35s ease;
+}
+
+
+.envelope-label span {
+  margin-left: 4px;
+}
+
+
+/* ==========================================
+   LETTER PAPER
+========================================== */
+
+.envelope-paper {
+
+  position: absolute;
+
+  z-index: 3;
+
+  left: 50%;
+  top: 50%;
+
+  width: 89%;
+
+  min-height: 365px;
+
+  padding: 34px;
+
+  transform:
+    translate(-50%, -30%)
+    scale(.72);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  color:
+    #28231f;
+
+  background:
+    #f7f1e8;
+
+  border-radius: 7px;
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.30);
+
+  transition:
+    transform .9s cubic-bezier(.2,.75,.2,1),
+    opacity .55s ease;
+}
+
+
+/* Letter content */
+
+.envelope-paper-content {
+
+  text-align: left;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  line-height: 1.65;
+}
+
+
+.envelope-paper-content p {
+  margin:
+    0 0 14px;
+}
+
+
+.letter-small {
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  font-size:
+    .58rem;
+
+  letter-spacing:
+    .22em;
+
+  text-transform:
+    uppercase;
+
+  opacity:
+    .52;
+}
+
+
+.envelope-paper-content
+.signature {
+
+  margin-top:
+    25px;
+
+  text-align:
+    right;
+
+}
+
+
+/* ==========================================
+   OPEN STATE
+========================================== */
+
+.love-envelope.open {
+
+  transform:
+    translateY(0);
+}
+
+
+.love-envelope.open
+.envelope-flap {
+
+  transform:
+    rotateX(180deg);
+}
+
+
+.love-envelope.open
+.envelope-heart {
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%)
+    scale(.5);
+}
+
+
+.love-envelope.open
+.envelope-label {
+
+  opacity: 0;
+}
+
+
+.love-envelope.open
+.envelope-paper {
+
+  opacity: 1;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+
+  pointer-events: auto;
+}
+
+
+/* ==========================================
+   CLOSE BUTTON
+========================================== */
+
+.envelope-close {
+
+  margin-top:
+    18px;
+
+  padding:
+    8px 16px;
+
+  border:
+    1px solid
+    var(--line, rgba(255,255,255,.12));
+
+  border-radius:
+    999px;
+
+  background:
+    transparent;
+
+  color:
+    inherit;
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  font-size:
+    .72rem;
+
+  cursor:
+    pointer;
+
+  opacity:
+    0;
+
+  pointer-events:
+    none;
+
+  transform:
+    translateY(-5px);
+
+  transition:
+    opacity .4s ease,
+    transform .4s ease;
+}
+
+
+.envelope-area.open
+.envelope-close {
+
+  opacity:
+    .7;
+
+  pointer-events:
+    auto;
+
+  transform:
+    translateY(0);
+}
+
+
+.envelope-close:hover {
+  opacity: 1;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+  .envelope-area {
+    min-height: 390px;
+  }
+
+
+  .love-envelope {
+    width: 90vw;
+    height: 270px;
+  }
+
+
+  .envelope-paper {
+
+    width: 91%;
+
+    min-height: 350px;
+
+    padding:
+      25px 22px;
+
+  }
+
+
+  .envelope-paper-content {
+
+    font-size:
+      .9rem;
+
+    line-height:
+      1.55;
+
+  }
+
+
+  .envelope-heart {
+
+    width: 55px;
+    height: 55px;
+
+  }
+
+
+  .envelope-label {
+
+    font-size:
+      .95rem;
+
+  }
+
+}
 ```
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
