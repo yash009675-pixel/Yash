@@ -1,500 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Yash ❤️ Arpita</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A small love story for Arpita.">
+  <title>Yash &hearts; Arpita</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <div class="intro" id="intro" aria-hidden="true">
+    <p>Yash <span>&hearts;</span> Arpita</p>
+  </div>
 
-<!-- ======================================
-     CINEMATIC INTRO
-====================================== -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Home">Y<span>&hearts;</span>A</a>
+    <button class="icon-button" id="themeButton" type="button" aria-label="Switch colour theme" title="Switch colour theme">☀️</button>
+  </header>
 
-<div id="cinematicIntro">
+  <main>
+    <section class="hero section-shell">
+      <p class="eyebrow">A little corner of the internet for us</p>
+      <h1>Yash <span>&hearts;</span> Arpita</h1>
+      <p class="hero-copy">Every ordinary day became a beautiful memory because it had you in it.</p>
 
-    <div class="intro-overlay"></div>
+      <div class="since-card">
+        <span>Together since</span>
+        <strong>22 January 2021</strong>
+      </div>
 
-    <div class="intro-box">
-
-        <h1 class="intro-title">
-            Yash ❤️ Arpita
-        </h1>
-
-        <p class="intro-present">
-            presents
-        </p>
-
-        <h2 id="typingText">
-            A Story Written By Destiny
-        </h2>
-
-        <div class="intro-line"></div>
-
-    </div>
-
-</div>
-
-<!-- ======================================
-     LOADER
-====================================== -->
-
-<div id="loader">
-
-    <div class="loader-heart">
-        ❤️
-    </div>
-
-    <h1>
-        Yash ❤️ Arpita
-    </h1>
-
-    <p>
-        Loading Our Forever...
-    </p>
-
-</div>
-
-<!-- ======================================
-     BACKGROUND
-====================================== -->
-
-<div class="background"></div>
-
-<div id="stars"></div>
-
-<!-- ======================================
-     HOME PAGE
-====================================== -->
-
-<div class="container">
-
-    <h1 class="title">
-        Yash ❤️ Arpita
-    </h1>
-
-    <p class="subtitle">
-        Forever & Always
-    </p>
-
-    <div class="since">
-
-        Together Since ❤️
-
-        <br>
-
-        <b>22 January 2021</b>
-
-    </div>
-
-    <h3 class="count-title">
-        Next Anniversary In
-    </h3>
-
-    <div class="countdown">
-
-        <div class="card">
-
-            <div class="number" id="days">
-                000
-            </div>
-
-            <span>
-                Days
-            </span>
-
+      <section class="countdown-section" aria-labelledby="countdownTitle">
+        <p id="countdownTitle">Until our next anniversary</p>
+        <div class="countdown" aria-live="polite">
+          <div><strong id="days">000</strong><span>Days</span></div>
+          <div><strong id="hours">00</strong><span>Hours</span></div>
+          <div><strong id="minutes">00</strong><span>Minutes</span></div>
+          <div><strong id="seconds">00</strong><span>Seconds</span></div>
         </div>
+        <p class="years-together" id="yearsTogether"></p>
+      </section>
 
-        <div class="card">
+      <div class="hero-actions">
+        <a class="button button-primary" href="story.html">Read our story <span aria-hidden="true">→</span></a>
+        <button class="button button-quiet" id="musicButton" type="button" aria-pressed="false">♫ Play our song</button>
+      </div>
+    </section>
 
-            <div class="number" id="hours">
-                00
-            </div>
-
-            <span>
-                Hours
-            </span>
-
+    <section class="letter-section section-shell" aria-labelledby="letterTitle">
+      <p class="eyebrow">For you</p>
+      <h2 id="letterTitle">A letter from my heart</h2>
+      <details class="letter-card">
+        <summary>Open my letter <span aria-hidden="true">✦</span></summary>
+        <div class="letter-content">
+          <p>Dear Arpita,</p>
+          <p>I did not make this page simply because I can write code. I made it because every smile, every laugh, and every little memory with you deserves a home.</p>
+          <p>Thank you for being my happiness and for choosing me. Whatever tomorrow brings, I will keep choosing you.</p>
+          <p class="signature">Forever &amp; always,<br><strong>Yash</strong></p>
         </div>
+      </details>
+    </section>
+  </main>
 
-        <div class="card">
+  <footer class="site-footer">Made with <span aria-label="love">&hearts;</span> for Arpita · <span id="currentYear"></span></footer>
 
-            <div class="number" id="minutes">
-                00
-            </div>
-
-            <span>
-                Minutes
-            </span>
-
-        </div>
-
-        <div class="card">
-
-            <div class="number" id="seconds">
-                00
-            </div>
-
-            <span>
-                Seconds
-            </span>
-
-        </div>
-
-    </div>
-
-    <div id="yearsTogether">
-
-        ❤️ 5 Years Together ❤️
-
-    </div>
-
-    <a href="story.html" class="button">
-
-        Begin Our Journey ❤️
-
-    </a>
-
-</div>
-<!-- ======================================
-     LOVE LETTER
-====================================== -->
-
-<section id="loveLetter">
-
-    <h2 class="section-title">
-        💌 A Letter For You
-    </h2>
-
-    <div class="envelope" id="envelope">
-
-        <div class="envelope-top"></div>
-
-        <div class="letter">
-
-            <h3>Dear Arpita ❤️</h3>
-
-            <p>
-
-                I didn't build this website because I know coding.
-
-                <br><br>
-
-                I built it because every memory with you deserves
-                a beautiful place.
-
-                <br><br>
-
-                Every smile...
-
-                Every laugh...
-
-                Every heartbeat...
-
-                reminds me how lucky I am.
-
-                <br><br>
-
-                Thank you for being my happiness.
-
-                Thank you for choosing me.
-
-                <br><br>
-
-                No matter what happens,
-
-                I will always choose you.
-
-                <br><br>
-
-                ❤️ Forever & Always ❤️
-
-                <br><br>
-
-                Yours,
-
-                <br>
-
-                <b>Yash</b>
-
-            </p>
-
-        </div>
-
-    </div>
-
-    <button id="openLetter">
-
-        Open My Letter ❤️
-
-    </button>
-
-</section>
-
-<!-- ======================================
-     MUSIC
-====================================== -->
-
-<button id="musicBtn">
-
-    🎵
-
-</button>
-
-<audio id="bgMusic" loop>
-
+  <audio id="bgMusic" loop preload="metadata">
     <source src="song.mp3" type="audio/mpeg">
-
-</audio>
-
-<!-- ======================================
-     THEME BUTTON
-====================================== -->
-
-<button id="themeBtn">
-
-    🌙
-
-</button>
-
-<!-- ======================================
-     WELCOME POPUP
-====================================== -->
-
-<div id="welcomePopup">
-
-    <div class="popup-card">
-
-        <h2>
-
-            💌 Hi Arpita ❤️
-
-        </h2>
-
-        <p>
-
-            I made something special just for you.
-
-            <br><br>
-
-            Every page contains a memory.
-
-            Every animation contains a feeling.
-
-            Every heartbeat belongs to you.
-
-            <br><br>
-
-            ❤️ Welcome To Our Love Story ❤️
-
-        </p>
-
-        <button id="closePopup">
-
-            Begin ❤️
-
-        </button>
-
-    </div>
-
-</div>
-
-<!-- ======================================
-     FLOATING HEARTS
-====================================== -->
-
-<div class="hearts">
-
-    <span>❤️</span>
-
-    <span>💜</span>
-
-    <span>❤️</span>
-
-    <span>💜</span>
-
-    <span>❤️</span>
-
-</div>
-<!-- =========================================
-ANNIVERSARY CELEBRATION
-========================================= -->
-
-<div id="confettiContainer"></div>
-
-<div id="heartRain"></div>
-
-<div id="celebrationText">
-
-🎉 Happy Anniversary ❤️
-
-</div>
-
-<button id="giftButton">
-
-🎁 Secret Gift
-
-</button>
-
-<div id="giftPopup">
-
-<div class="gift-card">
-
-<h2>
-
-❤️ A Gift For You ❤️
-
-</h2>
-
-<p>
-
-Thank you for filling my life
-
-with happiness,
-
-love,
-
-and beautiful memories.
-
-<br><br>
-
-No matter what happens,
-
-I'll always choose you.
-
-❤️ Forever ❤️
-
-</p>
-
-<button id="closeGift">
-
-Close ❤️
-
-</button>
-
-<button id="proposalButton">
-
-One More Question 💍
-
-</button>
-
-</div>
-
-</div>
-  <!-- =========================================
-PHASE 6C
-FIREWORKS + PROPOSAL
-========================================= -->
-
-<canvas id="fireworksCanvas"></canvas>
-
-<div id="proposalPopup">
-
-<div class="proposal-card">
-
-<h2>💍 One Question...</h2>
-
-<p>
-
-Will You Stay With Me
-
-Forever?
-
-❤️
-
-</p>
-
-<div class="proposal-buttons">
-
-<button id="yesBtn">
-
-Yes ❤️
-
-</button>
-
-<button id="noBtn">
-
-No 🙈
-
-</button>
-
-</div>
-
-</div>
-
-</div>   
-
-<!-- =========================================
-PHASE 7B
-PREMIUM PHOTO VIEWER
-========================================= -->
-
-<div id="photoViewer">
-
-    <span id="closeViewer">✕</span>
-
-    <img id="viewerImage" src="" alt="Memory">
-<button id="prevPhoto">❮</button>
-
-<button id="nextPhoto">❯</button>
-
-</div>
-
-<!-- =========================================
-PHASE 7B.4
-GRAND FINALE
-========================================= -->
-
-<div id="finalScene">
-
-    <div class="final-content">
-
-        <h1>❤️ Forever & Always ❤️</h1>
-
-        <p>
-
-            Every love story is beautiful...
-
-            <br><br>
-
-            But ours will always be my favourite.
-
-            <br><br>
-
-            Thank you for every smile,
-
-            every memory,
-
-            every heartbeat.
-
-            <br><br>
-
-            I Love You Forever ❤️
-
-        </p>
-
-        <button id="closeFinal">
-
-            Continue Our Journey ❤️
-
-        </button>
-
-    </div>
-
-</div>  
-<script src="script.js" defer></script>
-     
+    Your browser does not support audio playback.
+  </audio>
+  <script src="script.js" defer></script>
 </body>
 </html>
