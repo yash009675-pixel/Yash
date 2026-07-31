@@ -1499,57 +1499,27 @@ transition-duration:
    DAY / NIGHT THEME
 ========================================== */
 
+/* ==========================================
+   DARK THEME - DEFAULT
+========================================== */
+
 :root {
-  --story-bg: #14091f;
-  --story-bg-secondary: #260d37;
+  --ink: #f9f5fc;
+  --muted: #d7c9df;
 
-  --story-text: #f9f5fc;
-  --story-muted: #d7c9df;
+  --surface: rgba(31, 17, 48, 0.70);
+  --surface-strong: rgba(39, 20, 61, 0.90);
 
-  --story-card: rgba(31, 17, 48, 0.72);
-  --story-card-strong: rgba(39, 20, 61, 0.94);
+  --line: rgba(255, 255, 255, 0.16);
 
-  --story-line: rgba(255, 255, 255, 0.16);
+  --pink: #ff6cbe;
+  --pink-light: #ffc3e7;
+  --purple: #a98bff;
 
-  --story-pink: #ff6cbe;
-  --story-pink-light: #ffc3e7;
-  --story-purple: #a98bff;
-
-  --story-shadow:
+  --shadow:
     0 24px 70px rgba(7, 2, 17, 0.34);
 
   color-scheme: dark;
-}
-
-
-/* ==========================================
-   DARK THEME
-========================================== */
-
-body {
-  color: var(--story-text);
-
-  background:
-    radial-gradient(
-      circle at 12% 10%,
-      rgba(241, 80, 176, 0.30),
-      transparent 26rem
-    ),
-    radial-gradient(
-      circle at 88% 18%,
-      rgba(135, 91, 255, 0.25),
-      transparent 28rem
-    ),
-    linear-gradient(
-      135deg,
-      var(--story-bg) 0%,
-      var(--story-bg-secondary) 48%,
-      #10081c 100%
-    );
-
-  transition:
-    background 500ms ease,
-    color 500ms ease;
 }
 
 
@@ -1559,22 +1529,19 @@ body {
 
 body.light-theme {
 
-  --story-bg: #fff6fc;
-  --story-bg-secondary: #f5efff;
+  --ink: #28122e;
+  --muted: #6d5972;
 
-  --story-text: #28122e;
-  --story-muted: #6d5972;
+  --surface: rgba(255, 249, 253, 0.78);
+  --surface-strong: rgba(255, 252, 255, 0.96);
 
-  --story-card: rgba(255, 249, 253, 0.78);
-  --story-card-strong: rgba(255, 252, 255, 0.96);
+  --line: rgba(71, 30, 79, 0.14);
 
-  --story-line: rgba(71, 30, 79, 0.14);
+  --pink: #d82e84;
+  --pink-light: #b6387c;
+  --purple: #7055d5;
 
-  --story-pink: #d82e84;
-  --story-pink-light: #b6387c;
-  --story-purple: #7055d5;
-
-  --story-shadow:
+  --shadow:
     0 24px 70px rgba(82, 38, 85, 0.16);
 
   color-scheme: light;
@@ -1600,10 +1567,35 @@ body.light-theme {
 
 
 /* ==========================================
+   THEME TRANSITION
+========================================== */
+
+body,
+.story-header,
+.story-nav,
+.story-nav-link,
+.story-card,
+.story-visual,
+.story-content,
+.memory-box,
+.story-ending,
+.memory-dialog,
+.story-footer,
+.story-theme-button {
+  transition:
+    background 500ms ease,
+    color 500ms ease,
+    border-color 500ms ease,
+    box-shadow 500ms ease;
+}
+
+
+/* ==========================================
    THEME BUTTON
 ========================================== */
 
 .story-theme-button {
+
   display: grid;
 
   width: 42px;
@@ -1617,52 +1609,68 @@ body.light-theme {
 
   border:
     1px solid
-    var(--story-line);
+    var(--line);
 
   border-radius: 50%;
 
   background:
-    var(--story-card);
+    var(--surface);
 
   color:
-    var(--story-text);
+    var(--ink);
 
   font-size: 1rem;
 
   transition:
     transform 300ms ease,
     background 300ms ease,
-    border-color 300ms ease;
+    border-color 300ms ease,
+    color 300ms ease;
 }
 
 
 .story-theme-button:hover {
+
   transform:
     rotate(18deg)
     scale(1.05);
 
   background:
-    rgba(255, 255, 255, 0.12);
+    rgba(255, 255, 255, 0.15);
 }
 
 
 /* ==========================================
-   THEME TRANSITIONS
+   LIGHT THEME - EXTRA ELEMENT FIXES
 ========================================== */
 
-.story-header,
-.story-nav,
-.story-nav-link,
-.story-card,
-.story-visual,
-.story-content,
-.memory-box,
-.story-ending,
-.memory-dialog,
-.story-footer {
-  transition:
-    background 500ms ease,
-    color 500ms ease,
-    border-color 500ms ease,
-    box-shadow 500ms ease;
+body.light-theme .story-intro {
+  background: #fff6fc;
+  color: var(--ink);
+}
+
+body.light-theme .story-number {
+  background: #fff6fc;
+  color: var(--pink);
+}
+
+body.light-theme .story-visual span {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+body.light-theme .story-visual small {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+body.light-theme .memory-box {
+  color: #fff;
+}
+
+body.light-theme .memory-dialog {
+  background: var(--surface-strong);
+  color: var(--ink);
+}
+
+body.light-theme .dialog-close:hover {
+  background: var(--surface);
 }
