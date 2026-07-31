@@ -47,28 +47,90 @@
         <button class="button button-quiet" id="musicButton" type="button" aria-pressed="false">♫ Play our song</button>
       </div>
     </section>
+    ```html
+<section class="letter-section section-shell" aria-labelledby="letterTitle">
 
-    <section class="letter-section section-shell" aria-labelledby="letterTitle">
-      <p class="eyebrow">For you</p>
-      <h2 id="letterTitle">A letter from my heart</h2>
-      <details class="letter-card">
-        <summary>Open my letter <span aria-hidden="true">✦</span></summary>
-        <div class="letter-content">
+  <p class="eyebrow">For you</p>
+
+  <h2 id="letterTitle">
+    A letter from my heart
+  </h2>
+
+  <div class="envelope-area">
+
+    <button
+      class="love-envelope"
+      id="loveEnvelope"
+      type="button"
+      aria-label="Open my letter"
+      aria-expanded="false"
+    >
+
+      <!-- Letter paper -->
+      <div class="envelope-paper">
+
+        <div class="envelope-paper-content">
+
+          <p class="letter-small">
+            A LETTER FOR YOU
+          </p>
+
           <p>Dear Arpita,</p>
-          <p>I did not make this page simply because I can write code. I made it because every smile, every laugh, and every little memory with you deserves a home.</p>
-          <p>Thank you for being my happiness and for choosing me. Whatever tomorrow brings, I will keep choosing you.</p>
-          <p class="signature">Forever &amp; always,<br><strong>Yash</strong></p>
+
+          <p>
+            I did not make this page simply because
+            I can write code. I made it because every
+            smile, every laugh, and every little memory
+            with you deserves a home.
+          </p>
+
+          <p>
+            Thank you for being my happiness and for
+            choosing me. Whatever tomorrow brings,
+            I will keep choosing you.
+          </p>
+
+          <p class="signature">
+            Forever &amp; always,<br>
+            <strong>Yash ♥</strong>
+          </p>
+
         </div>
-      </details>
-    </section>
-  </main>
 
-  <footer class="site-footer">Made with <span aria-label="love">&hearts;</span> for Arpita · <span id="currentYear"></span></footer>
+      </div>
 
-  <audio id="bgMusic" loop preload="metadata">
-    <source src="song.mp3" type="audio/mpeg">
-    Your browser does not support audio playback.
-  </audio>
-  <script src="script.js" defer></script>
-</body>
-</html>
+
+      <!-- Envelope -->
+      <div class="envelope-front">
+
+        <div class="envelope-flap"></div>
+
+        <div class="envelope-fold envelope-fold-left"></div>
+
+        <div class="envelope-fold envelope-fold-right"></div>
+
+        <div class="envelope-fold envelope-fold-bottom"></div>
+
+        <span class="envelope-heart">♥</span>
+
+        <span class="envelope-label">
+          Open my letter <span>✦</span>
+        </span>
+
+      </div>
+
+    </button>
+
+
+    <button
+      class="envelope-close"
+      id="envelopeClose"
+      type="button"
+    >
+      Close letter
+    </button>
+
+  </div>
+
+</section>
+```
