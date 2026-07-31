@@ -151,45 +151,6 @@ function safeSet(key, value) {
   }
 }
 ```javascript
-/* =========================================
-   DAY / NIGHT BUTTON
-   ========================================= */
-
-const yashThemeButton =
-  document.getElementById(
-    "yashThemeButton"
-  );
-
-
-if (yashThemeButton) {
-
-  yashThemeButton.addEventListener(
-    "click",
-    function () {
-
-      /*
-        IMPORTANT:
-        Agar tumhari existing website
-        mein already theme system hai,
-        to is JS ko use karne ki zaroorat
-        nahi hai.
-
-        Existing theme button ko hi use karo.
-      */
-
-      document.body.classList.toggle(
-        "night-mode"
-      );
-
-      const night =
-        document.body.classList.contains(
-          "night-mode"
-        );
-
-      yashThemeButton.textContent =
-        night ? "🌙" : "☀️";
-
-    }
   );
 
 }
